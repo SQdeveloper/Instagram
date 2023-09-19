@@ -1,0 +1,91 @@
+.app {
+  display: flex;
+}
+
+
+/**** SideBar ****/
+.sideBar {
+  width: 16%;
+  border-right: 1px solid gray;
+  margin: 2rem 0 0 1.2rem;
+}
+
+.sideBar_options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sideBar_option {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+/*** TimeLine ***/
+.timeLine {
+  /* width: 100%; */
+}
+
+/*** Histories ***/
+.slider {  
+  /* display: flex; */
+  position: relative;
+  width: 37.3rem;
+  background-color: lightgreen;
+}
+
+.contSlider {
+  width: 33.3rem;
+  background-color: blue;
+  overflow: hidden;
+  margin: 0 auto;
+  /* padding: 0 2rem; */
+}
+
+.sliderMove {
+  display: flex;
+  gap: 1rem;
+  transition: transform .5s;
+  /* background-color: lightgoldenrodyellow; */
+}
+
+.history {
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history_perfil {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: aquamarine;
+}
+
+.history_user {
+  font-size: .9rem;
+}
+
+.slider_button {
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;  
+  transition: opacity .4s, visibility .4s;  
+}
+
+.slider_button--right {
+  right: 0;
+}
+
+.slider_button--left {
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
