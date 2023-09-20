@@ -35,7 +35,7 @@ const SideBar = () => {
                     <a href="">Crear</a>
                 </li>
                 <li className='sideBar_option'>
-                    <img src="" alt="perfilIcon" />                    
+                    <img src="../src/assets/tecnonauta.jpg" alt="perfilIcon" />                    
                     <a href="">Perfil</a>
                 </li>
                 <li className='sideBar_option'>

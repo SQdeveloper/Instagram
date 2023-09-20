@@ -23,36 +23,33 @@
   gap: .8rem;
 }
 
-/*** TimeLine ***/
-.timeLine {
-  /* width: 100%; */
+.sideBar img {
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  object-fit: cover;
 }
 
 /*** Histories ***/
-.slider {  
-  /* display: flex; */
+.slider {    
   position: relative;
-  width: 37.3rem;
-  background-color: lightgreen;
+  width: 37.3rem;  
+  margin: 2.5rem auto;
 }
 
 .contSlider {
-  width: 33.3rem;
-  background-color: blue;
+  width: 33.3rem;  
   overflow: hidden;
-  margin: 0 auto;
-  /* padding: 0 2rem; */
+  margin: 0 auto;  
 }
 
 .sliderMove {
   display: flex;
   gap: 1rem;
-  transition: transform .5s;
-  /* background-color: lightgoldenrodyellow; */
+  transition: transform .5s;  
 }
 
-.history {
-  background-color: lightcoral;
+.history {  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,8 +58,7 @@
 .history_perfil {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  background-color: aquamarine;
+  border-radius: 50%;  
 }
 
 .history_user {
@@ -70,7 +66,6 @@
 }
 
 .slider_button {
-  background-color: red;
   width: 20px;
   height: 20px;
   position: absolute;
@@ -78,6 +73,7 @@
   transform: translateY(-50%);
   z-index: 2;  
   transition: opacity .4s, visibility .4s;  
+  background-color: transparent;
 }
 
 .slider_button--right {
@@ -89,3 +85,17 @@
   visibility: hidden;
   pointer-events: none;
 }
+
+.chevron {
+  filter: invert(100%);
+  pointer-events: none;
+}
+
+.chevron-right {
+  transform: rotate(-90deg);
+}
+
+.chevron-left {
+  transform: rotate(90deg);
+}
+
