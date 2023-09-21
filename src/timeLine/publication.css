@@ -97,7 +97,7 @@
 
 .publication_options-buttonPost {
     font-weight: bold;
-    color: rgb(54, 144, 247);
+    color: var(--sky-blue);
     margin-bottom: .1rem;    
 }
 

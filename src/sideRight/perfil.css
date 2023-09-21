@@ -1,0 +1,41 @@
+.perfil {
+    display: flex;
+    justify-content: space-between;
+}
+
+.perfil_content {
+    display: flex;
+    gap: .5rem;
+}
+
+.perfil_image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.perfil_info-span {
+    font-size: .85rem;
+}
+
+.perfil_info-button {
+    font-size: .75rem;
+    color: var(--sky-blue)
+}
+ 
+.SideRight {
+    flex: 1;    
+    padding-right: 2rem;
+}
+
+.SideRight_sub {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.1rem 0 1rem;
+}
+
+.perfilUsers {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}

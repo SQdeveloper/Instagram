@@ -1,3 +1,7 @@
+:root {
+  --sky-blue: rgb(54, 144, 247);
+}
+
 * {
   margin: 0;
   padding: 0;

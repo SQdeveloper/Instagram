@@ -1,25 +1,27 @@
 import React, { useRef, useState } from 'react';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 
-function Histories() {
+function Histories({historyUsers}) {
     const sliderMove  = useRef();
     const buttonRight = useRef();
     const buttonLeft  = useRef();
     const [number, setNumber] = useState(0);
 
     const handleSliderMove = (number, button)=>{        
+        let newButton = null;
+        
         if(number <= -3 || number >= 0) {
-            let newButton = null;
 
             button.style.pointerEvents = "none"
             button.style.opacity = 0;
             button.style.visibility = "hidden"  
 
-            button !== buttonRight.current ? newButton = buttonRight : newButton = buttonLeft;            
-            newButton.current.style.opacity = 1;          
-            newButton.current.style.visibility = "visible";                                
-            newButton.current.style.pointerEvents = "all"
         } 
+        
+        button !== buttonRight.current ? newButton = buttonRight : newButton = buttonLeft;            
+        newButton.current.style.opacity = 1;          
+        newButton.current.style.visibility = "visible";                                
+        newButton.current.style.pointerEvents = "all"
 
         sliderMove.current.style.transform = `translateX(${4.875 * number}rem)`;
     }
@@ -46,46 +48,13 @@ function Histories() {
                     <ExpandCircleDownIcon className='chevron chevron-left'/>
                 </button>
                 <div ref={sliderMove} className="sliderMove">
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
+                    {historyUsers.map(user=>(
+                    <div key={user.login.uuid} className="history">
+                        <img src={user.picture.medium} className='history_img' alt="" />
+                        <span className='history_username'>{user.login.username}</span>
                     </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
-                    <div className="history">
-                        <img src="../src/assets/perfiles/girl.jpg" className='history_perfil' alt="" />
-                        <span className='history_user'>user_name</span>
-                    </div>
+
+                    ))}
                 </div>
             </div>            
         </div>

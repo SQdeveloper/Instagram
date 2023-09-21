@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
 
-function Publication({url, username, days ,description, likes}) {
+function Publication({userLoged, url, username, days ,description, likes}) {
     const [activePost, setActivePost]     = useState(false);
     const [listComments, setListComments] = useState([]);
     const inputText = useRef();
-
+    
     const handleChangeInput = (e)=>{        
         const input = e.target.value;
         if(input !== "") {setActivePost(true)}
@@ -53,7 +53,7 @@ function Publication({url, username, days ,description, likes}) {
                 {
                     listComments.map((comment, index) => (
                         <li key={index}>
-                            <strong>{username}</strong> {comment}
+                            <strong>{userLoged[0].login.username}</strong> {comment}
                         </li>         
                     ))
                 }
