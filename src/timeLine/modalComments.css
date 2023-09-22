@@ -1,0 +1,87 @@
+.modal {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, .8);
+    z-index: 5;
+}
+
+.contentModal {    
+    display: flex;
+    width: 70%;
+    height: 90%;
+    background-color: white;
+}
+
+.contentModal_img {
+    width: 40%;
+    height: 100%;
+    background-color: red;
+}
+
+.contentModal_info {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.contentModal_info-header {
+    display: flex;
+    justify-content: space-between;
+    padding: .7rem;
+    border-bottom: 1px solid rgb(231, 230, 230);
+}
+
+.contentModal_header-user {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.contentModal_header-user img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.contentModal_info-comments {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+}
+
+.contentModal_info-reactions {
+    padding: 1rem .7rem;
+    text-align: start;
+}
+
+.contentModal_info-reactions .publication_reactions {
+    margin:0;
+}
+
+.contentModal_info-post {
+    width: 100%;
+    padding: 1rem .7rem;
+    border-top: 1px solid rgb(231, 230, 230);
+}
+
+.contentModal_info-post form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.contentModal_post-input {
+    width: 100%;    
+}
+
+.contentModal_info-post .publication_post-icon {    
+    scale: 1.5;
+    margin-top: .2rem;
+}

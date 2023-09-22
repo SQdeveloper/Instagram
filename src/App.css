@@ -6,6 +6,7 @@
 
 /**** SideBar ****/
 .sideBar {
+  position: fixed;
   width: 16%;
   border-right: 1px solid gray;
   margin: 0 0 0 1.2rem;

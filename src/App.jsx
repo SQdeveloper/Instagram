@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className='app'>  
-      <SideBar/>        
+      <SideBar userLoged={userLoged}/>        
       <TimeLine userLoged={userLoged} historyUsers={historyUsers} publicationsUsers={publicationsUsers}/>
       <div className="SideRight">
         <PerfilUserLoged userLoged={userLoged}/>
@@ -37,7 +37,7 @@ function App() {
         </div>
         <div className="perfilUsers">
           {suggestionsUsers.map((user)=>(
-            <PerfilUser key={user.login.uuid} url={user.picture.medium} username='leonardo' following={true} />
+            <PerfilUser key={user.login.uuid} url={user.picture.medium} username={user.login.username} following={true} />
           ))}
         </div>
       </div>      
