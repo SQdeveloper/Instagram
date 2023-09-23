@@ -51,7 +51,7 @@
     background-color: black;
 }
 
-.publication_reactions-icons:hover > svg.i-like {    
+.publication_reactions-icons:hover > svg.icon-hover {    
     filter: invert(60%)
 }
 

@@ -1,0 +1,25 @@
+.modalOptions {
+    z-index: 6;
+    background-color: rgba(0,0,0, .6);    
+}
+
+.contentModalOptions {    
+    display: flex;
+    width: 400px;    
+    background-color: white;
+    border-radius: .8rem;
+    flex-direction: column;
+    text-align: center;    
+    overflow: hidden;
+}
+
+.contentModalOptions button {
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(214, 213, 213);
+}
+
+.contentModalOptions-warning {
+    color: red;
+    font-weight: 800;
+}
