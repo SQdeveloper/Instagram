@@ -1,0 +1,86 @@
+.contentShareModal {
+    background-color: white;
+    border-radius: .5rem;    
+    width: 31.25rem;
+}
+
+.contentShareModal_header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: .7rem 0;
+}
+
+.contentShareModal_header-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.contentShareModal_header-buttonClose svg {
+    filter: invert(100%);
+    scale: .8;
+}
+
+.contentShareModal_header button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contentShareModal_form {
+    display: flex;
+    padding: .7rem 1rem;
+    border-top: 1px solid rgb(177, 176, 176);
+    border-bottom: 1px solid rgb(177, 176, 176);
+}
+
+.contentShareModal_form input {
+    margin-left: 1rem;
+    flex: 1;
+}
+
+.contentShareModal_form label {
+    font-weight: bold;
+}
+
+.contentShareModal_sugerencias {
+    padding: 1rem;
+}
+
+.contentShareModal_sugerencias .title {
+    font-weight: bold;
+}
+
+.contentShareModal_perfil {
+    display: flex;
+    gap: .6rem;
+    align-items: center;
+}
+
+.contentShareModal_sugerencias img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.contentShareModal_sugerencia {
+    display: flex; 
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.contentShareModal_footer {
+    padding: 1rem;
+    border-top: 1px solid rgb(177, 176, 176);    
+}
+
+.contentShareModal_footer button {
+    background-color: var(--sky-blue);
+    width: 100%;
+    border-radius: 2rem;
+    padding: .5rem 0;
+    font-size: .8rem;
+    color: white;
+}

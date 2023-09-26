@@ -1,13 +1,16 @@
 import React, { useRef, useState } from 'react';
 import ModalComment from './ModalComments/ModalComment';
 import ModalOptions from './ModalOptions/ModalOptions';
+import ModalShare from './ModalShare/ModalShare'
 
 function Publication({userLoged, url, username, days ,description, likes}) {
-    const [activePost, setActivePost]     = useState(false);
-    const [listComments, setListComments] = useState([]);
-    const [clickedHeart, setClickedHeart]   = useState(false);
+    const [activePost, setActivePost]         = useState(false);
+    const [activeShare, setActiveShare]       = useState(false);
+    const [listComments, setListComments]     = useState([]);
+    const [clickedHeart, setClickedHeart]     = useState(false);
     const [clickedComment, setClickedComment] = useState(false);
     const [clickedOptions, setClickedOptions] = useState(false);
+    const [isClickedButtonSave, setIsClickedButtonSave] = useState(false);
     const inputText = useRef();
     
     const handleChangeInput = (e)=>{        
@@ -18,10 +21,13 @@ function Publication({userLoged, url, username, days ,description, likes}) {
 
     const sendPost = (e)=>{
         e.preventDefault();
+        let text = inputText.current.value;
+        if(text === "") return;
         const newListComments = [...listComments];
-        newListComments.push(inputText.current.value);
+        newListComments.push(text);
         setListComments(newListComments);
-        inputText.current.value = "";        
+        inputText.current.value = "";    
+        setActivePost(false);    
     }
 
     const handleClickHeart = ()=>{
@@ -29,13 +35,16 @@ function Publication({userLoged, url, username, days ,description, likes}) {
     }
     const handleClickComment = ()=>{
         setClickedComment(clickedComment => !clickedComment);
-    }
-    const handleClickShare = ()=>{
-        // setClickedHeart(clickedHeart => !clickedHeart);
-    }
-
+    }    
     const openOptionsModal = ()=>{
         setClickedOptions(clickedOptions => !clickedOptions);
+    }
+    const openShareModal = ()=> {
+        setActiveShare(activeShare => !activeShare);
+    }
+
+    const changeButtonSave = ()=>{
+        setIsClickedButtonSave(isClickedButtonSave => !isClickedButtonSave);
     }
 
     return (
@@ -73,14 +82,22 @@ function Publication({userLoged, url, username, days ,description, likes}) {
                         <svg aria-label="Comentar" className='icon-hover' color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Comentar</title><path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
                     </button>
                     {clickedComment && 
-                        <ModalComment publicationUrl='../src/assets/videos/once.mp4' openOptionsModal={openOptionsModal} handleClickComment={handleClickComment} likes={likes} url={url} username={username}/>                            
+                        <ModalComment changeButtonSave={changeButtonSave} isClickedButtonSave={isClickedButtonSave} clickedHeart={clickedHeart} setClickedHeart={setClickedHeart} openShareModal={openShareModal} setListComments={setListComments} userLoged={userLoged} listComments={listComments} publicationUrl='../src/assets/videos/once.mp4' openOptionsModal={openOptionsModal} handleClickComment={handleClickComment} likes={likes} url={url} username={username}/>                            
                     }
-                    <button onClick={handleClickShare} className='publication_reactions-icons publication_reactions-share'>
-                        {/* {clickedIcon} */}
+                    <button onClick={openShareModal} className='publication_reactions-icons publication_reactions-share'>                        
                         <svg className='icon-hover' aria-label="Compartir publicación" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Compartir publicación</title><line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="22" x2="9.218" y1="3" y2="10.083"></line><polygon fill="none" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon></svg>
                     </button>
+                    {activeShare && 
+                        <ModalShare userLoged={userLoged} openShareModal={openShareModal}/>
+                    }
                 </div>
-                <button><svg aria-label="Guardar" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Guardar</title><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg></button>                
+                <button onClick={changeButtonSave} className='publication_reactions-icons'>
+                    {isClickedButtonSave ? 
+                        <svg aria-label="Eliminar" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Eliminar</title><path d="M20 22a.999.999 0 0 1-.687-.273L12 14.815l-7.313 6.912A1 1 0 0 1 3 21V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1Z"></path></svg>
+                        :
+                        <svg className='icon-hover' aria-label="Guardar" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Guardar</title><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>
+                    }
+                </button>                
             </div>
             <span className='publication_likes'>
                 {likes} Likes

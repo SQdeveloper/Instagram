@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import "./SideRight/perfil.css"
 import SideBar from './navigate/SideBar'
-import TimeLine from './timeLine/timeLine'
+import TimeLine from './timeLine/TimeLine'
 import PerfilUserLoged from './sideRight/PerfilUserLoged'
 import PerfilUser from './sideRight/PerfilUser'
 import getRandomUsers from './services/getRandomUsers'
