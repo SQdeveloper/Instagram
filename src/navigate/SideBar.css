@@ -1,0 +1,36 @@
+.sideBar {
+    position: fixed;
+    width: 16%;
+    height: 100%;    
+    border-right: 1px solid rgb(211, 209, 209);
+    margin: 0 0 0 1.2rem;
+    top: 0;
+    padding: 3rem 0;
+  }
+  
+  .sideBar_options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .sideBar_erase {    
+    /* display: none; */
+    visibility: hidden;
+    transition: visibility 1s, display 1s;
+  }
+
+  .sideBar_option button{
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-size: .94rem;
+  }
+  
+  .sideBar img {
+    border-radius: 50%;
+    width: 1.4375rem;
+    height: 1.4375rem;
+    object-fit: cover;
+  }

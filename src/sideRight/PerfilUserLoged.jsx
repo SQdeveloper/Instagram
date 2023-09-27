@@ -9,7 +9,7 @@ function PerfilUserLoged({userLoged}) {
                     <div className="perfil_info">
                         <h5 className='perfil_info-user'>{user.login.username}</h5>
                         <span className='perfil_info-span'>                        
-                            <h3>{user.name.first + " " + user.name.last}</h3>                        
+                            <div>{user.name.first + " " + user.name.last}</div>                        
                         </span>
                     </div>
                 </div>

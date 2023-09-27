@@ -1,0 +1,92 @@
+.slider {    
+    position: relative;
+    width: 38.3rem;  
+    margin: 0 auto 2.5rem;  
+  }
+  
+.contSlider {
+  width: 100%;    
+  overflow: hidden;
+  margin: 0 auto;    
+}
+
+.sliderMove {
+  display: flex;
+  gap: 1rem;
+  transition: transform .5s;  
+}
+
+.history {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;    
+}
+
+.history_imgContent {
+  display: flex;
+  /* place-items: center; */
+  justify-content: center;
+  align-items: center;
+  padding: .1rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  border-radius: 50%;
+}
+
+.history_img {
+  object-fit: cover;
+  padding: .2rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;  
+  background-color: white;
+}
+
+.history_username {
+  font-size: .85rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 62.4px;
+  text-align: center;  
+  margin-top: .4rem;
+}
+
+.slider_button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 17px;
+  z-index: 2;  
+  transition: opacity .4s, visibility .4s;  
+  background-color: transparent;
+}
+
+.slider_button svg {
+  width: 26px;
+  height: 26px
+}
+
+.slider_button--right {
+  right: 20px;
+}
+
+.slider_button--left {
+  left: 20px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.chevron {
+  filter: invert(100%);
+  pointer-events: none;
+}
+
+.chevron-right {
+  transform: rotate(-90deg);
+}
+
+.chevron-left {
+  transform: rotate(90deg);
+}

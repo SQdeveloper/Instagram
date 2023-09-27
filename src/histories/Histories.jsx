@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import './Histories.css'
 
 function Histories({historyUsers}) {
     const sliderMove  = useRef();
@@ -49,11 +50,12 @@ function Histories({historyUsers}) {
                 </button>
                 <div ref={sliderMove} className="sliderMove">
                     {historyUsers.map(user=>(
-                    <div key={user.login.uuid} className="history">
-                        <img src={user.picture.medium} className='history_img' alt="" />
-                        <span className='history_username'>{user.login.username}</span>
-                    </div>
-
+                        <div key={user.login.uuid} className="history">
+                            <div className="history_imgContent">
+                                <img src={user.picture.medium} className='history_img' alt="" />
+                            </div>
+                            <span className='history_username'>{user.login.username}</span>
+                        </div>
                     ))}
                 </div>
             </div>            

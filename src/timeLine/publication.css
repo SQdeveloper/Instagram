@@ -9,9 +9,11 @@
 }
 
 .perfilUser img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;    
+    padding: .1rem;
+    background-color: white;
 }
 
 .timeLine_Publications {
@@ -28,8 +30,20 @@
     margin-bottom: .6rem;
 }
 
+.publication_header-contentImg {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;  
+  padding: .1rem;
+}
+
 .publication_header--info > span {
-    font-size: .8em;
+    font-size: .83em;
+}
+
+.publication_header--info-username {
+    font-size: 1rem;
 }
 
 .publication_header--info > div {
@@ -40,14 +54,14 @@
 
 .header__days {
     color: gray;
-    font-size: .8em;
+    font-size: .9em;
 }
 
 .publication_content {
     display: flex;
     justify-content: center;
-    height: 500px;
-    width: 400px;
+    height: 580px;
+    width: 450px;
     background-color: black;
 }
 

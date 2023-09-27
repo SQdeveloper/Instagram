@@ -12,6 +12,7 @@ function App() {
   const [suggestionsUsers, setSuggestionsUsers] = useState([]);  
   const [historyUsers, setHistoryUsers] = useState([]);  
   const [publicationsUsers, setPublicationsUsers] = useState([]);  
+  const [sectionSelected, setSectionSelected] = useState("Inicio");
 
   const getUsers = async ()=>{
     const newUsers = await getRandomUsers();
@@ -27,20 +28,28 @@ function App() {
 
   return (
     <div className='app'>  
-      <SideBar userLoged={userLoged}/>        
-      <TimeLine userLoged={userLoged} historyUsers={historyUsers} publicationsUsers={publicationsUsers}/>
-      <div className="SideRight">
-        <PerfilUserLoged userLoged={userLoged}/>
-        <div className="SideRight_sub">
-          <div className="title">Suggestions for you</div>
-          <button>See all</button>
-        </div>
-        <div className="perfilUsers">
-          {suggestionsUsers.map((user)=>(
-            <PerfilUser key={user.login.uuid} url={user.picture.medium} username={user.login.username} following={true} />
-          ))}
-        </div>
-      </div>      
+      <SideBar setSectionSelected={setSectionSelected} userLoged={userLoged}/>        
+      {sectionSelected === "Inicio" && 
+      <>
+        <TimeLine userLoged={userLoged} historyUsers={historyUsers} publicationsUsers={publicationsUsers}/>  
+        <div className="SideRight">
+          <PerfilUserLoged userLoged={userLoged}/>
+          <div className="SideRight_sub">
+            <div className="title">Suggestions for you</div>
+            <button>See all</button>
+          </div>
+          <div className="perfilUsers">
+            {suggestionsUsers.map((user)=>(
+              <PerfilUser key={user.login.uuid} url={user.picture.medium} username={user.login.username} following={true} />
+            ))}
+          </div>
+        </div>      
+      </>
+      }
+
+      {sectionSelected === "Explorar" &&         
+        <h1>exploarr</h1>
+      }
     </div>
   )
 }
