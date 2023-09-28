@@ -62,6 +62,8 @@
     justify-content: center;
     height: 580px;
     width: 450px;
+    border-radius: .2rem;    
+    overflow: hidden;
     background-color: black;
 }
 
@@ -90,8 +92,11 @@
     animation: entry 1s ease-in-out;
 }
 
-.publication_content video {    
+.publication_content-img {    
     height: 100%;        
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
 }
 
 .publication_reactions {

@@ -31,8 +31,8 @@ function ModalComment({changeButtonSave, isClickedButtonSave, setClickedHeart, c
     return (
         <div className='modal'>
             <button className='modal_buttonClose' onClick={handleClickComment}><svg aria-label="Cerrar" class="x1lliihq x1n2onr6" color="rgb(255, 255, 255)" fill="rgb(255, 255, 255)" height="18" role="img" viewBox="0 0 24 24" width="18"><title>Cerrar</title><polyline fill="none" points="20.643 3.357 12 12 3.353 20.647" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" x1="20.649" x2="3.354" y1="20.649" y2="3.354"></line></svg></button>
-            <div className="contentModal">
-                <video autoPlay muted loop className='contentModal_img' src={publicationUrl} />
+            <div className="contentModal">    
+                <img className='contentModal_img' src={publicationUrl} alt='publication'/>
                 <div className="contentModal_info">
                     <div className="contentModal_info-header">
                         <div className="contentModal_header-user">

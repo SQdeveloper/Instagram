@@ -3,7 +3,7 @@ import ModalComment from './ModalComments/ModalComment';
 import ModalOptions from './ModalOptions/ModalOptions';
 import ModalShare from './ModalShare/ModalShare'
 
-function Publication({userLoged, url, username, days ,description, likes}) {
+function Publication({imgPublication, userLoged, url, username, days ,description, likes}) {
     const [activePost, setActivePost]         = useState(false);
     const [activeShare, setActiveShare]       = useState(false);
     const [listComments, setListComments]     = useState([]);
@@ -69,7 +69,7 @@ function Publication({userLoged, url, username, days ,description, likes}) {
                 }
             </div>
             <div className="publication_content">
-                <video loop autoPlay muted src="../src/assets/videos/once.mp4"></video>
+                <img className='publication_content-img' src={imgPublication} alt='publication'/>
             </div>
             <div className="publication_reactions">
                 <div className="publication_reactions-left">
@@ -84,7 +84,7 @@ function Publication({userLoged, url, username, days ,description, likes}) {
                         <svg aria-label="Comentar" className='icon-hover' color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Comentar</title><path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
                     </button>
                     {clickedComment && 
-                        <ModalComment changeButtonSave={changeButtonSave} isClickedButtonSave={isClickedButtonSave} clickedHeart={clickedHeart} setClickedHeart={setClickedHeart} openShareModal={openShareModal} setListComments={setListComments} userLoged={userLoged} listComments={listComments} publicationUrl='../src/assets/videos/once.mp4' openOptionsModal={openOptionsModal} handleClickComment={handleClickComment} likes={likes} url={url} username={username}/>                            
+                        <ModalComment publicationUrl={imgPublication} changeButtonSave={changeButtonSave} isClickedButtonSave={isClickedButtonSave} clickedHeart={clickedHeart} setClickedHeart={setClickedHeart} openShareModal={openShareModal} setListComments={setListComments} userLoged={userLoged} listComments={listComments} openOptionsModal={openOptionsModal} handleClickComment={handleClickComment} likes={likes} url={url} username={username}/>                            
                     }
                     <button onClick={openShareModal} className='publication_reactions-icons publication_reactions-share'>                        
                         <svg className='icon-hover' aria-label="Compartir publicación" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Compartir publicación</title><line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="22" x2="9.218" y1="3" y2="10.083"></line><polygon fill="none" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon></svg>
