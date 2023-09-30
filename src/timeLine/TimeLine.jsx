@@ -18,14 +18,13 @@ function TimeLine({historyUsers, publicationsUsers, userLoged}) {
         fillListImages();
     }, [])
 
-    return (
-        // imagesList && 
+    return (        
             <div className='timeLine'>                        
                 <Histories historyUsers={historyUsers}/>
                 {imagesList.length !== 0 && 
                     <div className="timeLine_Publications">
                         {publicationsUsers.map((user, index)=>(
-                            <Publication key={user.login.uuid} imgPublication={imagesList[index].webformatURL} userLoged={userLoged} url={user.picture.medium} username={user.login.username} days={2} description={user.location.timezone.description} likes={1233}/>                                    
+                            <Publication key={user.login.uuid} imgPublication={imagesList[index].webformatURL} userLoged={userLoged} url={user.picture.medium} username={user.login.username} days={2} description={user.location.timezone.description} likes={imagesList[index].likes}/>                                    
                         ))
                         }
                     </div>                            

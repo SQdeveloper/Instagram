@@ -49,7 +49,7 @@ function App() {
       }
 
       {sectionSelected === "Explorar" &&         
-        <Explorar/>
+        <Explorar userLoged={userLoged}/>
       }
     </div>
   )

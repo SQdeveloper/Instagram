@@ -1,18 +1,22 @@
 .sideBar {
     position: fixed;
-    width: 13.5rem;
-    height: 100%;    
+    width: 14.7rem;
+    height: fit-content;
     border-right: 1px solid rgb(211, 209, 209);
-    margin: 0 0 0 1.2rem;
     top: 0;
-    padding: 3rem 0;
+    padding: 2.6rem 1.2rem;
+    overflow: scroll;
+  }
+
+  .sideBar::-webkit-scrollbar {
+    -webkit-appearance: none;
   }
   
   .sideBar_options {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: .6rem;
+    margin-top: 1.8rem;
   }
   
   .sideBar_erase {    
@@ -26,8 +30,25 @@
     align-items: center;
     gap: .8rem;
     font-size: .94rem;
+    width: 100%;
+    transition: background-color .3s;
+    border-radius: .5rem;
+    padding: .7rem;
   }
-  
+
+  .sideBar_logo {
+    margin-left: .7rem;
+  }
+
+  .sideBar_option button:hover {
+    background-color: rgba(240, 236, 236, .8);
+  }
+
+  .sideBar_option:hover .sideBar_option-icon {
+    transition: scale .3s;
+    scale: 1.13;
+  }
+
   .sideBar img {
     border-radius: 50%;
     width: 1.4375rem;
