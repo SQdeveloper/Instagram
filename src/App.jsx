@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import "./SideRight/perfil.css"
-import SideBar from './navigate/SideBar'
+import SideBar from "./navigate/SideBar/SideBar";
 import TimeLine from './timeLine/TimeLine'
 import PerfilUserLoged from './sideRight/PerfilUserLoged'
 import PerfilUser from './sideRight/PerfilUser'
 import getRandomUsers from './services/getRandomUsers'
 import Explorar from './navigate/Explorar/Explorar'
+import Perfil from './navigate/Perfil/Perfil';
 
 function App() {  
   const [userLoged, setUserLoged] = useState([]);  
@@ -50,6 +51,10 @@ function App() {
 
       {sectionSelected === "Explorar" &&         
         <Explorar userLoged={userLoged}/>
+      }
+
+      {sectionSelected === "Perfil" && 
+        <Perfil userLoged={userLoged} historyUsers={historyUsers}/>
       }
     </div>
   )

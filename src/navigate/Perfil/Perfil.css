@@ -1,0 +1,140 @@
+.sectionPerfil {
+    width: 100%;
+    margin-left: 17.7rem;
+    margin-right: 3rem;
+}
+
+.sectionPerfil_header {
+    display:flex;
+    justify-content: center;
+    gap: 5rem;        
+}
+
+.sectionPerfil_header-contImg {
+    display: flex;
+    padding: .2rem;
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    border-radius: 100%;
+}
+
+.sectionPerfil_header-contImg img {
+    background-color: white;
+    padding: .2rem;
+    border-radius: 100%;
+    height: 7.5rem;
+    width: 7.5rem;
+    object-fit: cover;
+}
+
+.sectionPerfil_header-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;    
+}
+
+.sectionPerfil_header-data-top {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+}
+
+.sectionPerfil_header-data-username {
+    font-size: 1.25rem;
+}
+
+.sectionPerfil_header-data-button {
+    background-color: rgb(223, 221, 221);
+    border-radius: .4rem;
+    padding: .5rem 1rem;
+    font-weight: bold;
+}
+
+.sectionPerfil_header-data-info {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.1rem;
+}
+
+.sectionPerfil_header-data-name {
+    font-weight: bold;
+}
+
+.sectionPerfil_histories {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgb(185, 185, 185);    
+}
+
+.sectionPerfil_histories .history_img {
+    width: 100%;
+    height: 100%;
+}
+
+.sectionPerfil_slider {
+    position: relative;
+    width: 90%;
+    padding: 0 1rem;
+}
+
+.sectionPerfil_contentSlider {
+    background-color: lightblue;
+    overflow: hidden;
+    width: 100%;
+}
+
+.sectionPerfil_sliderMove {
+    width: calc(1000%/7);
+    display: flex;
+    justify-content: center;
+    transition: transform 1s;
+    gap: 2rem;
+}
+
+.tor {
+    border: 1px solid black;
+    background-color: lightcoral;
+    width: calc(10% - 2rem);
+    height: 100px;
+}
+
+.sectionPerfil_sliderMove-arrow {
+    position: absolute;
+    top: 50%;    
+    z-index: 2;    
+}
+
+.sectionPerfil-arrow {    
+    color: rgba(0,0,0,.6);
+    scale: 1.2;
+}
+
+.sectionPerfil_sliderMove-arrow-left {
+    left: 0;
+    visibility: hidden;
+    transform: translateY(-50%) rotateZ(90deg);
+}
+
+.sectionPerfil_sliderMove-arrow-right {
+    right: 0;
+    transform: translateY(-50%) rotateZ(-90deg);
+}
+
+.sectionPerfil_body {
+    width: 100%;
+}
+
+.sectionPerfil_body-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.sectionPerfil_body-nav--option {
+    padding: 1rem 0;
+    border-top: 2px solid transparent;
+}
+
+.sectionPerfil_body-nav--option.selected {
+    border-color: black;
+}

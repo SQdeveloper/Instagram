@@ -1,6 +1,6 @@
 import React from 'react';
 import './SideBar.css';
-import SideBarOption from './SideBarOption/SideBarOption';
+import SideBarOption from '../SideBarOption/SideBarOption';
 
 const SideBar = ({userLoged, setSectionSelected}) => {    
     return (        
