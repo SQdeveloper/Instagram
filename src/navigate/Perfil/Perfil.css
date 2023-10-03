@@ -1,7 +1,7 @@
 .sectionPerfil {
-    width: 100%;
-    margin-left: 17.7rem;
+    width: calc(100% - 20.7rem);    
     margin-right: 3rem;
+    margin-left: 17.7rem;
 }
 
 .sectionPerfil_header {
@@ -43,10 +43,14 @@
 }
 
 .sectionPerfil_header-data-button {
-    background-color: rgb(223, 221, 221);
+    background-color: rgb(228, 226, 226);
     border-radius: .4rem;
     padding: .5rem 1rem;
     font-weight: bold;
+}
+
+.sectionPerfil_header-data-button:hover {
+    background-color: rgb(187, 187, 187);
 }
 
 .sectionPerfil_header-data-info {
@@ -77,8 +81,7 @@
     padding: 0 1rem;
 }
 
-.sectionPerfil_contentSlider {
-    background-color: lightblue;
+.sectionPerfil_contentSlider {    
     overflow: hidden;
     width: 100%;
 }
@@ -87,15 +90,31 @@
     width: calc(1000%/7);
     display: flex;
     justify-content: center;
-    transition: transform 1s;
+    transition: transform .3s;
     gap: 2rem;
 }
 
-.tor {
-    border: 1px solid black;
-    background-color: lightcoral;
-    width: calc(10% - 2rem);
-    height: 100px;
+.sectionPerfil_slider-contHistory {
+    width: calc(10% - 2rem);    
+    height: auto;
+    text-align: center;    
+}
+
+.sectionPerfil_slider-contHistory-img {
+    border: 2px solid rgb(212, 211, 211);
+    padding: .2rem;
+    display: block;
+    margin: auto;
+    width: 80px;
+    border-radius: 50%;
+    height: 80px;    
+}
+
+.sectionPerfil_slider-contHistory-name {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: .6rem;    
 }
 
 .sectionPerfil_sliderMove-arrow {
@@ -131,10 +150,14 @@
 }
 
 .sectionPerfil_body-nav--option {
-    padding: 1rem 0;
+    padding: 1rem 0 1.2rem 0;
     border-top: 2px solid transparent;
 }
 
 .sectionPerfil_body-nav--option.selected {
     border-color: black;
+}
+
+.sectionPerfil_body .explorar{
+    margin: 0;    
 }

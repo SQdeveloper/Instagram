@@ -5,7 +5,8 @@ import ModalOptions from '../../timeLine/ModalOptions/ModalOptions';
 import ModalShare from '../../timeLine/ModalShare/ModalShare';
 
 function PubExplorar({commentNumbers , urlPublication, likes, username, url, userLoged}) {
-    const [isOpenPublication, setIsOpenPublication] = useState(false);    const [isClickedButtonSave, setIsClickedButton] = useState(false);
+    const [isOpenPublication, setIsOpenPublication] = useState(false);    
+    const [isClickedButtonSave, setIsClickedButton] = useState(false);
     const [clickedHeart, setClickedHeart] = useState(false);
     const [listComments, setListComments] = useState([]);
     const [isOpenOptionModal, setIsOpenOptionModal] = useState(false);

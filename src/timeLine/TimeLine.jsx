@@ -10,8 +10,7 @@ function TimeLine({historyUsers, publicationsUsers, userLoged}) {
 
     const fillListImages = async ()=>{
         const newImages = await getListImages("people+street", 10);
-        setImagesList(newImages);
-        console.log(newImages)
+        setImagesList(newImages);        
     }
 
     useEffect(()=>{

@@ -50,7 +50,7 @@ function App() {
       }
 
       {sectionSelected === "Explorar" &&         
-        <Explorar userLoged={userLoged}/>
+        <Explorar amount={21} keyWord={"models"} userLoged={userLoged}/>
       }
 
       {sectionSelected === "Perfil" && 

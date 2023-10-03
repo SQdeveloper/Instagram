@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 
-function SliderOfPerfil() {
+function SliderOfPerfil( {historyUsers}) {
     const arrowLeft = useRef();
     const arrowRight = useRef();
     const sliderMove = useRef();
@@ -39,22 +39,15 @@ function SliderOfPerfil() {
                     <ExpandCircleDownIcon className='sectionPerfil-arrow'/>
                 </button>
                 <div ref={sliderMove} className="sectionPerfil_sliderMove">
-                    {/* <div className="sectionPerfil_slider-contHistory">
-                        <img src="" alt="img-perfil" />
-                        <div className="sectionPerfil_slider-contHistory-name">
-                            she's beautiful
-                        </div>
-                    </div> */}
-                    <div className="tor"></div>
-                    <div className="tor"></div>
-                    <div className="tor"></div>
-                    <div className="tor"></div>
-                    <div className="tor"></div>
-                    <div className="tor"></div>
-                    <div className="tor"></div>
-                    <div className="tor"></div>
-                    <div className="tor"></div>
-                    <div className="tor"></div>
+                    { historyUsers.map(user=>(
+                        <button key={user.login.uuid} className="sectionPerfil_slider-contHistory">
+                            <img className='sectionPerfil_slider-contHistory-img' src={user.picture.large} alt="img-perfil" />
+                            <div className="sectionPerfil_slider-contHistory-name">
+                                {user.login.username}
+                            </div>
+                        </button>
+                    ))}
+
                 </div>
             </div>
         </div>
