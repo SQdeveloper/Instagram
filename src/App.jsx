@@ -8,13 +8,14 @@ import PerfilUser from './sideRight/PerfilUser'
 import getRandomUsers from './services/getRandomUsers'
 import Explorar from './navigate/Explorar/Explorar'
 import Perfil from './navigate/Perfil/Perfil';
+import Messages from './navigate/Messages/Messages';
 
 function App() {  
   const [userLoged, setUserLoged] = useState([]);  
   const [suggestionsUsers, setSuggestionsUsers] = useState([]);  
   const [historyUsers, setHistoryUsers] = useState([]);  
   const [publicationsUsers, setPublicationsUsers] = useState([]);  
-  const [sectionSelected, setSectionSelected] = useState("Inicio");
+  const [sectionSelected, setSectionSelected] = useState("Home");
 
   const getUsers = async ()=>{
     const newUsers = await getRandomUsers();
@@ -31,7 +32,7 @@ function App() {
   return (
     <div className='app'>  
       <SideBar setSectionSelected={setSectionSelected} userLoged={userLoged}/>        
-      {sectionSelected === "Inicio" && 
+      {sectionSelected === "Home" && 
         <>
           <TimeLine userLoged={userLoged} historyUsers={historyUsers} publicationsUsers={publicationsUsers}/>  
           <div className="SideRight">
@@ -49,12 +50,16 @@ function App() {
         </>
       }
 
-      {sectionSelected === "Explorar" &&         
+      {sectionSelected === "Explore" &&         
         <Explorar amount={21} keyWord={"models"} userLoged={userLoged}/>
       }
 
-      {sectionSelected === "Perfil" && 
+      {sectionSelected === "Profile" && 
         <Perfil userLoged={userLoged} historyUsers={historyUsers}/>
+      }
+
+      {sectionSelected == "Messages" && 
+        <Messages userChat={suggestionsUsers}/> 
       }
     </div>
   )

@@ -1,0 +1,110 @@
+.messages {
+    display: flex;
+    width: calc(100% - 14.7rem);
+    height: 100%;
+    margin-left: 14.7rem;    
+    position: absolute;
+    top: 0;
+}
+
+.messages_bandeja {
+    width: 500px;    
+    border-right: 1px solid rgb(209, 208, 208);    
+    padding-top: 2.5rem;
+}
+
+.messages_bandeja_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.messages_bandeja_header-username {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-right: .5rem;
+}
+
+.messages_bandeja_title {
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    margin: 2rem 0 .5rem;
+    padding: 0 1rem;
+}
+
+.messages_bandeja_title-h1 {
+    font-size: 1.05rem
+}
+
+.messages_bandeja_title-span {
+    color: gray;
+}
+
+.messages_bandeja_contMessages {
+    display: flex;
+    flex-direction: column;
+}
+
+.messages_bandeja_contMessages-message {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: .5rem 1rem;
+}
+
+.messages_bandeja_contMessages-message:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.messages_bandeja_contMessages-message--img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+}
+
+.messages_bandeja_contMessages-message--text {
+    text-align: start;
+}
+
+.messages_bandeja_contMessages-text-name {
+    font-weight: bold;
+    margin-bottom: .4rem;
+}
+
+.messages_bandeja_contMessages-text-mss {
+    color: gray;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.messages_sectionChat {
+    display: flex;    
+    gap: 1rem;        
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+}
+
+.messages_sectionChat-strong {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.messages_sectionChat-text {
+    color: gray;
+}
+
+.messages_sectionChat-button {
+    background-color: rgb(2, 155, 243);
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    color: white;
+    font-weight: bolder;
+    transition: background-color .3s;
+}
+
+.messages_sectionChat-button:hover {
+    background-color: rgb(2, 114, 243);
+}
