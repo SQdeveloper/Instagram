@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Messages.css';
 import Chat from './Chat/Chat';
 
 const Messages = ({userChat}) => {
+    const [listChat, setListChat] = useState([[], [], [], [], [], []]);
+    const [name, setName] = useState("");
+    const [username, setUsername] = useState("");
+    const [imgPerfil, setImgperfil] = useState("");
+    const [identifier, setIdentifier] = useState(0);
+
+    const handleClickUserChat = (user, index)=>{
+        setName(user.name.first + " " + user.name.last);
+        setUsername(user.login.username);
+        setImgperfil(user.picture.large);
+        setIdentifier(index)
+    }
+
     return (
         <div className='messages'>
             <div className="messages_bandeja">
@@ -18,8 +31,8 @@ const Messages = ({userChat}) => {
                     <span className='messages_bandeja_title-span'>Requests</span>
                 </div>
                 <div className="messages_bandeja_contMessages">
-                    {userChat.map(user=>(
-                        <button className="messages_bandeja_contMessages-message">
+                    {userChat.map((user, index)=>(
+                        <button onClick={()=>{handleClickUserChat(user, index)}} key={user.login.uuid} className="messages_bandeja_contMessages-message">
                             <img className='messages_bandeja_contMessages-message--img' src={user.picture.medium} alt="perfil image" />
                             <div className="messages_bandeja_contMessages-message--text">
                                 <div className="messages_bandeja_contMessages-text-name">
@@ -43,7 +56,7 @@ const Messages = ({userChat}) => {
                 </div>
                 <button className='messages_sectionChat-button'>Send message</button> */}
 
-                <Chat/>
+                <Chat listChat={listChat} identifier={identifier} listChatSelected={listChat[identifier]} setListChat={setListChat} name={name} username={username} imgPerfil={imgPerfil}/>
 
             </div>
         </div>

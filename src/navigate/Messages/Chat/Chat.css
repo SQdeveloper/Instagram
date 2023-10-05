@@ -1,7 +1,8 @@
 .messages_sectionChat-header {
     position: absolute;
     display: flex;
-    justify-content: space-between;
+    align-content: center;
+    justify-content: space-between;    
     top: 0;
     left: 0;
     width: 100%;    
@@ -10,7 +11,9 @@
 }
 
 .messages_sectionChat-perfil {
-    
+    display: flex;
+    align-items: center;
+    gap: .7rem;
 }
 
 .messages_sectionChat-perfil--img {
@@ -26,16 +29,22 @@
 .messages_sectionChat-options {
     display: flex;
     gap: 1rem;
+    align-items: center;
+}
+
+.messages_sectionChat_scrollBar {
+    margin-top: 5.1875rem;
+    padding-top: 2rem;
+    overflow-y: scroll;    
+    flex: 1;
 }
 
 .messages_sectionChat-infoPerfil {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 5rem;
     width: 100%;
-    align-items: center;
-    background-color: aliceblue;
+    align-items: center;    
     height: fit-content;    
 }
 
@@ -46,8 +55,17 @@
     margin-bottom: .2rem;
 }
 
+.messages_sectionChat-infoPerfil--img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
 .messages_sectionChat-infoPerfil--username {
     color: gray;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .84rem;
 }
 
 .messages_sectionChat-infoPerfil--buttonViewPerfil {
@@ -58,4 +76,60 @@
     display: block;
     margin-top: 1rem;
     width: fit-content;
+    transition: background-color .3s;
+}
+
+.messages_sectionChat-infoPerfil--buttonViewPerfil:hover {
+    background-color: rgba(200, 200, 200);
+}
+
+.messages_sectionChat_conversation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    flex: 1;
+    height: 100%;
+    gap: 2rem;
+}
+
+.messages_sectionChat_conversation-date {
+    color: rgb(83, 83, 83);
+    font-size: .76rem;    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.messages_sectionChat_conversation-message {
+    border-radius: 2rem;
+    background-color: skyblue;
+    padding: .5rem;
+    color: white;
+    align-self: end;
+    margin-right: 1rem;
+}
+
+.messages_sectionChat_form {
+    display: flex;
+    gap: 1rem;
+    margin: 0 1rem 1rem 1rem;
+    padding: .55rem 1rem;
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 2rem;
+    /* position: absolute; */
+    /* bottom: 0;
+    right: 0; */
+    width: calc(100% - 2rem);
+}
+
+.messages_sectionChat_form-input {
+    flex: 1;    
+}
+
+.messages_sectionChat_form-options {
+    display: flex;
+    gap: 1rem;
 }
