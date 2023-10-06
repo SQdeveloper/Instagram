@@ -1,10 +1,7 @@
 .messages_sectionChat-header {
-    position: absolute;
     display: flex;
     align-content: center;
-    justify-content: space-between;    
-    top: 0;
-    left: 0;
+    justify-content: space-between;        
     width: 100%;    
     padding: 1rem;
     border-bottom: 1px solid rgb(209, 208, 208);
@@ -32,9 +29,8 @@
     align-items: center;
 }
 
-.messages_sectionChat_scrollBar {
-    margin-top: 5.1875rem;
-    padding-top: 2rem;
+.messages_sectionChat_scrollBar {    
+    padding-top: 2.2rem;
     overflow-y: scroll;    
     flex: 1;
 }
@@ -91,8 +87,7 @@
     text-align: center;
     margin-top: 3rem;
     margin-bottom: 1rem;
-    flex: 1;
-    height: 100%;
+    flex: 1;    
     gap: 2rem;
 }
 
@@ -104,12 +99,13 @@
 }
 
 .messages_sectionChat_conversation-message {
-    border-radius: 2rem;
+    border-radius: .6rem;
     background-color: skyblue;
     padding: .5rem;
     color: white;
     align-self: end;
     margin-right: 1rem;
+    font-size: 1.05rem;
 }
 
 .messages_sectionChat_form {
@@ -118,15 +114,13 @@
     margin: 0 1rem 1rem 1rem;
     padding: .55rem 1rem;
     border: 1px solid rgb(182, 182, 182);
-    border-radius: 2rem;
-    /* position: absolute; */
-    /* bottom: 0;
-    right: 0; */
+    border-radius: 2rem;    
     width: calc(100% - 2rem);
 }
 
 .messages_sectionChat_form-input {
     flex: 1;    
+    font-size: .95rem;
 }
 
 .messages_sectionChat_form-options {

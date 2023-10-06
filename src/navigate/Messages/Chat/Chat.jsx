@@ -1,9 +1,12 @@
-import React from 'react';
-import { useState, useRef } from 'react';
+import React, { useState } from 'react';
+import { useRef } from 'react';
 import './Chat.css'
 
 function Chat({listChat, identifier, listChatSelected, setListChat, username, name, imgPerfil}) {
     const inputText = useRef();
+    const sectionScroll = useRef();
+    const date = new Date();    
+    const [isActivedDate, setIsActiveDate] = useState([false,false,false,false,false,false]);
 
     const handleForm = (e)=>{
         e.preventDefault();
@@ -12,9 +15,14 @@ function Chat({listChat, identifier, listChatSelected, setListChat, username, na
 
         const newListChat = [...listChat];
         newListChat[identifier] = newListSelected;
-        setListChat(newListChat);        
-        console.log(newListChat)
-        console.log(newListSelected)
+        setListChat(newListChat);                
+
+        inputText.current.value = "";
+        sectionScroll.current.scrollTop = sectionScroll.current.scrollHeight;
+
+        const newActivedDate = [...isActivedDate];
+        newActivedDate[identifier] = true;
+        setIsActiveDate(newActivedDate);                
     }
 
     return (
@@ -31,7 +39,7 @@ function Chat({listChat, identifier, listChatSelected, setListChat, username, na
                 </div>
             </header>
 
-            <div className="messages_sectionChat_scrollBar">
+            <div ref={sectionScroll} className="messages_sectionChat_scrollBar">
                 <div className="messages_sectionChat-infoPerfil">
                     <img className='messages_sectionChat-infoPerfil--img' src={imgPerfil} alt="image perfil" />
                     <span className='messages_sectionChat-infoPerfil--name'>{name}</span>
@@ -42,7 +50,9 @@ function Chat({listChat, identifier, listChatSelected, setListChat, username, na
                 </div>
 
                 <div className="messages_sectionChat_conversation">
-                    <span className="messages_sectionChat_conversation-date">2002-10-7</span>
+                    {isActivedDate[identifier] && 
+                        <span className="messages_sectionChat_conversation-date">{date.toLocaleString().slice(0,-3)}</span>
+                    }
                     {
                         listChatSelected.map((ms, index)=>(
                         <div key={index} className="messages_sectionChat_conversation-message">
